@@ -31,4 +31,7 @@ Route::get('/clientes', function(){
 Route::get('/usuarios', function(){
     return view('usuarios');
 });
+/**
+ * Realização de testes manuais
+ */
 Route::get('/index', [PadraoController::class,'index']);

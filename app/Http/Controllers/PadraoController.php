@@ -41,6 +41,9 @@ class PadraoController extends Controller
     public function index()
     {
         //return view('padrao_index');
+        /**
+         * Teste de relacionamento
+         */
         dd($this->Fornecedor->find(1)->relationMercadorias);
     }
 
