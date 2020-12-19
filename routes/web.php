@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use app\http\controllers\PadraoController;
+use App\Http\Controllers\PadraoController as PadraoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +31,4 @@ Route::get('/clientes', function(){
 Route::get('/usuarios', function(){
     return view('usuarios');
 });
-
-//Route::get('/index', [PadraoController::class,'index']);
+Route::get('/index', [PadraoController::class,'index']);

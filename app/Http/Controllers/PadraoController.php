@@ -2,10 +2,37 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\User;
+use App\Models\Modelvendas;
 use Illuminate\Http\Request;
+use App\Models\ModelClientes;
+use App\Models\ModelMercadorias;
+use App\Models\ModelFornecedores;
+use App\Models\Modelvendas_mercadorias;
+
 
 class PadraoController extends Controller
 {
+    
+    private $Cliente;
+    private $Fornecedor;
+    private $Mercadoria;
+    private $Vendas_mercadorias;
+    private $Vendas;
+    private $Usuario;
+
+    public function __construct(){
+
+        $this->Cliente = new ModelClientes();
+        $this->Fornecedor = new ModelFornecedores();
+        $this->Mercadoria = new ModelMercadorias();
+        $this->Venda_mercadorias= new Modelvendas_mercadorias();
+        $this->Venda= new Modelvendas();
+        $this->Usuario = new User();
+
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -13,8 +40,8 @@ class PadraoController extends Controller
      */
     public function index()
     {
-        return view('padrao_index');
-        //
+        //return view('padrao_index');
+        dd($this->Venda_mercadorias->all());
     }
 
     /**
