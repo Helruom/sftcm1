@@ -41,7 +41,7 @@ class PadraoController extends Controller
     public function index()
     {
         //return view('padrao_index');
-        dd($this->Venda_mercadorias->all());
+        dd($this->Fornecedor->find(1)->relationMercadorias);
     }
 
     /**

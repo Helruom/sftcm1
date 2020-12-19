@@ -9,4 +9,8 @@ class Modelvendas_mercadorias extends Model
 {
     //use HasFactory;
     protected $table='Vendas_Mercadorias';
+    public function relationVendas()
+    {
+        return $this->hasMany('App\Models\Modelvendas','id','id_venda');
+    }
 }

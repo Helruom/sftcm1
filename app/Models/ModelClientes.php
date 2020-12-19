@@ -9,4 +9,9 @@ class ModelClientes extends Model
 {
    protected $table='Clientes';
     // use HasFactory;
+
+    public function relationVendasCliente()
+    {
+        return $this->hasMany('App\Models\Modelvendas','id_cliente');
+    }
 }
