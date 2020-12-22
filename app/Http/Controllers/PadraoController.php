@@ -40,13 +40,11 @@ class PadraoController extends Controller
      */
     public function index()
     {
-        //return view('padrao_index');
         /**
          * Teste de relacionamento
          */
-        dd($this->Fornecedor->find(1)->relationMercadorias);
+        dd($this->Fornecedor->find(1)->relationMercadorias());
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -76,7 +74,7 @@ class PadraoController extends Controller
      */
     public function show($id)
     {
-        //
+        //echo $id;
     }
 
     /**
@@ -111,5 +109,51 @@ class PadraoController extends Controller
     public function destroy($id)
     {
         //
+    }
+    /**
+     * Funções de clientes
+     */
+    public function clientes(){
+        $cliente=$this->Cliente->all();
+        return view('clientes', compact('cliente'));
+    }
+    /**
+     * Funções de fornecedores
+     */
+    public function fornecedores(){
+        $fornecedor=$this->Fornecedor->all();
+        return view('fornecedores', compact('fornecedor'));
+    }
+    /**
+     * Funções de Mercadorias
+     */
+    public function mercadorias(){
+        $mercadoria=$this->Mercadoria->all()->sortBydesc('id');
+        return view('mercadorias',compact('mercadoria'));
+    }
+    public function showMercadoria($id){
+        $mercadoria=$this->Mercadoria->find($id);
+        return view('mercadoria_editar',compact('mercadoria'));
+    }
+    /**
+     * Funções de usuario
+     */
+    public function usuarios(){
+        $usuario=$this->Usuario->all();
+        return view('usuarios', compact('usuario'));
+    }
+    /**
+     * funções de vendas
+     */
+    public function vendas(){
+        $venda=$this->Venda->all();
+        return view('vendas', compact('venda'));
+    }
+    /**
+     * Demais funções
+     */
+    public function incio()
+    {
+        return view('incio_1');
     }
 }

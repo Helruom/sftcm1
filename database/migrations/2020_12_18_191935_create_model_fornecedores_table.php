@@ -17,7 +17,7 @@ class CreateModelFornecedoresTable extends Migration
             $table->id('id')->unsigned();
             $table->string('Nome');
             $table->integer('Telefone');
-            $table->string('E-mail');
+            $table->string('Email');
             $table->timestamps();
         });
     }

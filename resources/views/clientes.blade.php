@@ -12,12 +12,14 @@
               </tr>
             </thead>
             <tbody>
+              @foreach ($cliente as $clientes)
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+                <th scope="row">{{$clientes->id}}</th>
+                <td>{{$clientes->Nome}}</td>
+                <td>{{$clientes->Telefone}}</td>
+                <td>{{$clientes->Email}}</td>
               </tr>
+              @endforeach
               <tr>
             </tbody>
           </table>

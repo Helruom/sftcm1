@@ -17,7 +17,7 @@ class CreateModelClientesTable extends Migration
             $table->id()->unsigned();
             $table->string('Nome');
             $table->integer('Telefone');
-            $table->string('E-mail');
+            $table->string('Email');
             $table->timestamps();
         });
     }
