@@ -131,9 +131,24 @@ class PadraoController extends Controller
         $mercadoria=$this->Mercadoria->all()->sortBydesc('id');
         return view('mercadorias',compact('mercadoria'));
     }
-    public function showMercadoria($id){
+    public function editMercadoria($id){
         $mercadoria=$this->Mercadoria->find($id);
         return view('mercadoria_editar',compact('mercadoria'));
+    }
+    public function createMercadoria()
+    {
+        $fornecedor=$this->Fornecedor->all();
+        return view('mercadoria_criar',compact('fornecedor'));
+    }
+    public function storeMercadoria(Request $request)
+    {
+        $this->Mercadoria->create([
+            'nome'=>$request->nome,
+            'id_fornecedor'=>$request->id_fornecedor,
+            'preço'=>$request->preço,
+            'estoque'=>$request->estoque,
+            'descricao'=>$request->descricao
+        ]);
     }
     /**
      * Funções de usuario

@@ -3,7 +3,7 @@
     <div class="col-9 m-auto">
         <h1 class="text-center ">Cadastro de Mercadorias</h1>
         <div class="mb-2">
-            <a href=""><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
+            <a href="{{url('/mercadorias/mercadoria_criar')}}"><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
             <a href=""><button type="button" class="btn btn-outline-dark">Nova Mercadoria</button></a>
         </div>
         <table class="table table-striped">
@@ -27,11 +27,11 @@
                 <th scope="row">{{$mercadorias->id}}</th>
                 <td>{{$mercadorias->nome}}</td>
                 <td>{{$fornecedor->Nome}}</td>
-                <td>{{$mercadorias->preço}}</td>
+                <td>R$ {{$mercadorias->preço}}</td>
                 <td>{{$mercadorias->descricao}}</td>
                 <td>{{$mercadorias->estoque}}</td>
                 <td>
-                    <a href="{{url('/mercadorias/'.$mercadorias->id)}}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
+                    <a href="{{url('/mercadorias/mercadoria_editar/'.$mercadorias->id)}}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
                     <a href=""><button type="button" class="btn btn-outline-dark">Excluir</button></a>            
               </tr>
               @endforeach

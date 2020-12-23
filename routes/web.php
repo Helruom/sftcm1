@@ -34,7 +34,11 @@ Route::get('/fornecedores', [PadraoController::class, 'fornecedores']);
  * Mercadorias
  */
 Route::get('/mercadorias', [PadraoController::class, 'mercadorias']);
-Route::get('/mercadorias/{mercadorias}',[PadraoController::class, 'showMercadoria']);
+Route::get('/mercadorias/mercadoria_editar/{mercadorias}',[PadraoController::class, 'editMercadoria']);
+Route::get('/mercadorias/mercadoria_criar',[PadraoController::class, 'create']);
+
+Route::post('/mercadorias/nova',[PadraoController::class, 'mercadorias']);
+
 /**
  * Usuarios
  */
