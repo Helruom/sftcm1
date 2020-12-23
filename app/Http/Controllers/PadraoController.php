@@ -117,6 +117,10 @@ class PadraoController extends Controller
         $cliente=$this->Cliente->all();
         return view('clientes', compact('cliente'));
     }
+    public function createCliente()
+    {
+        return view('cliente_criar');
+    }
     /**
      * Funções de fornecedores
      */
@@ -149,6 +153,8 @@ class PadraoController extends Controller
             'estoque'=>$request->estoque,
             'descricao'=>$request->descricao
         ]);
+        $fornecedor=$this->Fornecedor->all();
+        return view('mercadoria_criar',compact('fornecedor'));
     }
     /**
      * Funções de usuario

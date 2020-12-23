@@ -1,10 +1,10 @@
 @extends('padrao_index')
 @section('corpo_pagina')
-    <div class="col-9 m-auto">
+    <div class="col-auto m-auto">
         <h1 class="text-center ">Cadastro de Mercadorias</h1>
         <div class="mb-2">
-            <a href="{{url('/mercadorias/mercadoria_criar')}}"><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
-            <a href=""><button type="button" class="btn btn-outline-dark">Nova Mercadoria</button></a>
+            <a href=""><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
+            <a href="{{url('/mercadorias/mercadoria_criar')}}"><button type="button" class="btn btn-outline-dark">Nova Mercadoria</button></a>
         </div>
         <table class="table table-striped">
             <thead>

@@ -4,7 +4,7 @@
         <h1 class="text-center ">Cadastro de Clientes</h1>
         <div class="mb-2">
           <a href=""><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
-          <a href=""><button type="button" class="btn btn-outline-dark">Novo Cliente</button></a>
+          <a href="{{url('/clientes/cliente_criar')}}"><button type="button" class="btn btn-outline-dark">Novo Cliente</button></a>
         </div>
         <table class="table table-striped">
             <thead>

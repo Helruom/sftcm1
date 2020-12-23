@@ -26,6 +26,7 @@ Route::get('/', [PadraoController::class, 'incio']);
  * Clientes
  */
 Route::get('/clientes', [PadraoController::class, 'clientes']);
+Route::get('/clientes/cliente_criar',[PadraoController::class, 'createcliente']);
 /**
  * Fornecedores
  */
@@ -35,9 +36,9 @@ Route::get('/fornecedores', [PadraoController::class, 'fornecedores']);
  */
 Route::get('/mercadorias', [PadraoController::class, 'mercadorias']);
 Route::get('/mercadorias/mercadoria_editar/{mercadorias}',[PadraoController::class, 'editMercadoria']);
-Route::get('/mercadorias/mercadoria_criar',[PadraoController::class, 'create']);
+Route::get('/mercadorias/mercadoria_criar',[PadraoController::class, 'createMercadoria']);
 
-Route::post('/mercadorias/nova',[PadraoController::class, 'mercadorias']);
+Route::post('/mercadorias/nova',[PadraoController::class, 'storeMercadoria']);
 
 /**
  * Usuarios
