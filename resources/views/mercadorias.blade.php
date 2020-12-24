@@ -1,11 +1,12 @@
 @extends('padrao_index')
 @section('corpo_pagina')
-    <div class="col-auto m-auto">
+    <div class="col-10 m-auto">
         <h1 class="text-center ">Cadastro de Mercadorias</h1>
         <div class="mb-2">
             <a href=""><button type="button" class="btn btn-outline-dark">Pesquisar</button></a>
             <a href="{{url('/mercadorias/mercadoria_criar')}}"><button type="button" class="btn btn-outline-dark">Nova Mercadoria</button></a>
         </div>
+        @csrf
         <table class="table table-striped">
             <thead>
               <tr>
@@ -31,8 +32,8 @@
                 <td>{{$mercadorias->descricao}}</td>
                 <td>{{$mercadorias->estoque}}</td>
                 <td>
-                    <a href="{{url('/mercadorias/mercadoria_editar/'.$mercadorias->id)}}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
-                    <a href=""><button type="button" class="btn btn-outline-dark">Excluir</button></a>            
+                    <a href="{{url("/mercadorias/mercadoria_editar/$mercadorias->id")}}"><button type="button" class="btn btn-outline-dark">Editar</button></a>
+                    <a href="{{url("/mercadorias/$mercadorias->id")}}" clas="jsDelete"><button type="button" class="btn btn-outline-dark">Excluir</button></a>            
               </tr>
               @endforeach
               <tr>

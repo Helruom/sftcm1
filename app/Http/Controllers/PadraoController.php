@@ -12,6 +12,7 @@ use App\Models\ModelFornecedores;
 use App\Models\Modelvendas_mercadorias;
 
 
+
 class PadraoController extends Controller
 {
     
@@ -137,7 +138,19 @@ class PadraoController extends Controller
     }
     public function editMercadoria($id){
         $mercadoria=$this->Mercadoria->find($id);
-        return view('mercadoria_editar',compact('mercadoria'));
+        $fornecedor=$this->Fornecedor->all();
+        return view('mercadoria_editar',compact('mercadoria','fornecedor'));
+    }
+    public function updateMercadoria(Request $request)
+    {
+        $this->Mercadoria->where(['id'=>$request->id])->update([
+            'nome'=>$request->nome,
+            'id_fornecedor'=>$request->id_fornecedor,
+            'preço'=>$request->preço,
+            'estoque'=>$request->estoque,
+            'descricao'=>$request->descricao
+        ]);
+        return redirect('/mercadorias');
     }
     public function createMercadoria()
     {
@@ -155,6 +168,11 @@ class PadraoController extends Controller
         ]);
         $fornecedor=$this->Fornecedor->all();
         return view('mercadoria_criar',compact('fornecedor'));
+    }
+    public function destroyMercadoria($id)
+    {
+        $del=$this->Mercadoria->destroy($id);
+        return redirect('/mercadorias');
     }
     /**
      * Funções de usuario
