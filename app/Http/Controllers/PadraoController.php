@@ -44,7 +44,9 @@ class PadraoController extends Controller
         /**
          * Teste de relacionamento
          */
-        dd($this->Fornecedor->find(1)->relationMercadorias());
+        //dd($this->Fornecedor->find(1)->relationMercadorias());
+        $mercadoria=$this->Mercadoria->paginate(10);
+        return view('teste',compact('mercadoria'));
     }
     /**
      * Show the form for creating a new resource.
@@ -115,7 +117,7 @@ class PadraoController extends Controller
      * Funções de clientes
      */
     public function clientes(){
-        $cliente=$this->Cliente->all();
+        $cliente=$this->Cliente->paginate(10);
         return view('clientes', compact('cliente'));
     }
     public function editCliente($id){
@@ -153,11 +155,12 @@ class PadraoController extends Controller
      * Funções de fornecedores
      */
     public function fornecedores(){
-        $fornecedor=$this->Fornecedor->all();
+        $fornecedor=$this->Fornecedor->paginate(10);
         return view('fornecedores', compact('fornecedor'));
     }
     public function editFornecedor($id){
-        return view('fornecedor_editar');
+        $fornecedor=$this->Fornecedor->find($id);
+        return view('fornecedor_editar',compact('fornecedor'));
     }
     public function updateFornecedor(Request $request)
     {
@@ -190,7 +193,7 @@ class PadraoController extends Controller
      * Funções de Mercadorias
      */
     public function mercadorias(){
-        $mercadoria=$this->Mercadoria->all()->sortBydesc('id');
+        $mercadoria=$this->Mercadoria->paginate(10);
         return view('mercadorias',compact('mercadoria'));
     }
     public function editMercadoria($id){
@@ -235,11 +238,12 @@ class PadraoController extends Controller
      * Funções de usuario
      */
     public function usuarios(){
-        $usuario=$this->Usuario->all();
+        $usuario=$this->Usuario->paginate(10);
         return view('usuarios', compact('usuario'));
     }
     public function editUsuario($id){
-            return view('usuario_editar');
+        $usuario=$this->Usuario->find($id);
+        return view('usuario_editar',compact('usuario'));
         }
     public function updateUsuario(Request $request)
     {

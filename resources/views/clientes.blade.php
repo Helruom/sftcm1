@@ -35,3 +35,8 @@
     </table>
 </div>
 @endsection
+@section('rodape_pagina')
+  <div class="col-1 m-auto">
+    {{$cliente->links()}}
+  </div>
+@endsection

@@ -9,7 +9,6 @@ class ModelMercadorias extends Model
 {
     //use HasFactory;
     protected $table='Mercadorias';
-    protected $fillable=['nome','id_fornecedor','preço','descricao','estoque'];
     public $timestamps=false;
     public function relationFornecedor()
     {
@@ -19,4 +18,11 @@ class ModelMercadorias extends Model
     {
         return $this->hasMany('App\Models\Modelvendas_mercadorias','id_mercadoria');
     }
+    protected $fillable=[
+        'nome',
+        'id_fornecedor'
+        ,'preço',
+        'descricao',
+        'estoque'
+    ];
 }

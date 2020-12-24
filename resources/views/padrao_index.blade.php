@@ -18,7 +18,7 @@
     @yield('corpo_pagina')
 </body>
 <footer>
-    <p>aqui o rodape</p>
+    @yield('rodape_pagina')
     <script src="{{asset('jquery.js')}}"></script>
     <script src="{{asset('bootstrap.js')}}"></script>
     <script src="{{asset('bootstrap.bundle.js.map')}}"></script>

@@ -39,5 +39,11 @@
               <tr>
             </tbody>
           </table>
+ 
     </div>
+@endsection
+@section('rodape_pagina')
+  <div class="col-1 m-auto">
+    {{$mercadoria->links()}}
+  </div>
 @endsection

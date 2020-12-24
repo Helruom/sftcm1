@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ModelClientes extends Model
 {
    protected $table='Clientes';
-   protected $fillable=['Nome','Telefone','Email'];
    public $timestamps=false;
     // use HasFactory;
 
@@ -16,4 +15,9 @@ class ModelClientes extends Model
     {
         return $this->hasMany('App\Models\Modelvendas','id_cliente');
     }
+    protected $fillable=[
+        'Nome',
+        'Telefone',
+        'Email'
+    ];
 }
