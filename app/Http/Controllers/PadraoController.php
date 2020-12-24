@@ -118,9 +118,36 @@ class PadraoController extends Controller
         $cliente=$this->Cliente->all();
         return view('clientes', compact('cliente'));
     }
+    public function editCliente($id){
+        $cliente=$this->Cliente->find($id);
+        return view('cliente_editar',compact('cliente'));
+    }
+    public function updateCliente(Request $request)
+    {
+        $this->Cliente->where(['id'=>$request->id])->update([
+            'Nome'=>$request->nome,
+            'Telefone'=>$request->telefone,
+            'Email'=>$request->email,
+        ]);
+        return redirect('/clientes');
+    }
     public function createCliente()
     {
         return view('cliente_criar');
+    }
+    public function storeCliente(Request $request)
+    {
+        $this->Cliente->create([
+            'Nome'=>$request->nome,
+            'Telefone'=>$request->telefone,
+            'Email'=>$request->email,
+        ]);
+        return redirect('/clientes');
+    }
+    public function destroyCliente($id)
+    {
+        $del=$this->Cliente->destroy($id);
+        return redirect('/clientes');
     }
     /**
      * Funções de fornecedores
@@ -128,6 +155,36 @@ class PadraoController extends Controller
     public function fornecedores(){
         $fornecedor=$this->Fornecedor->all();
         return view('fornecedores', compact('fornecedor'));
+    }
+    public function editFornecedor($id){
+        return view('fornecedor_editar');
+    }
+    public function updateFornecedor(Request $request)
+    {
+        $this->Fornecedor->where(['id'=>$request->id])->update([
+            'Nome'=>$request->nome,
+            'Telefone'=>$request->telefone,
+            'Email'=>$request->email,
+        ]);
+        return redirect('/fornecedores');
+    }
+    public function createFornecedor()
+    {
+        return view('fornecedor_criar');
+    }
+    public function storeFornecedor(Request $request)
+    {
+        $this->Fornecedor->create([
+            'Nome'=>$request->nome,
+            'Telefone'=>$request->telefone,
+            'Email'=>$request->email,
+        ]);
+        return redirect('/fornecedores');
+    }
+    public function destroyFornecedor($id)
+    {
+        $del=$this->Fornecedor->destroy($id);
+        return redirect('/fornecedores');
     }
     /**
      * Funções de Mercadorias
@@ -180,6 +237,36 @@ class PadraoController extends Controller
     public function usuarios(){
         $usuario=$this->Usuario->all();
         return view('usuarios', compact('usuario'));
+    }
+    public function editUsuario($id){
+            return view('usuario_editar');
+        }
+    public function updateUsuario(Request $request)
+    {
+        $this->Usuario->where(['id'=>$request->id])->update([
+            'Nome'=>$request->nome,
+            'Email'=>$request->email,
+            'Senha'=>$request->senha,
+        ]);
+        return redirect('/usuarios');
+    }
+    public function createUsuario()
+    {
+        return view('usuario_criar');
+    }
+    public function storeUsuario(Request $request)
+    {
+        $this->Usuario->create([
+            'Nome'=>$request->nome,
+            'Email'=>$request->email,
+            'Senha'=>$request->senha,
+        ]);
+        return redirect('/usuarios');
+    }
+    public function destroyUsuario($id)
+    {
+        $del=$this->Usuario->destroy($id);
+        return redirect('/usuarios');
     }
     /**
      * funções de vendas

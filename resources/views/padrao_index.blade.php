@@ -16,12 +16,12 @@
         <div class="col"><a href="/usuarios">Usuarios</a></div>
       </div>
     @yield('corpo_pagina')
+</body>
+<footer>
+    <p>aqui o rodape</p>
     <script src="{{asset('jquery.js')}}"></script>
     <script src="{{asset('bootstrap.js')}}"></script>
     <script src="{{asset('bootstrap.bundle.js.map')}}"></script>
     <script src="{{asset('jScript.js')}}"></script>
-</body>
-<footer>
-    <p>aqui o rodape</p>
 </footer>
 </html>

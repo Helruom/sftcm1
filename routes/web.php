@@ -26,24 +26,38 @@ Route::get('/', [PadraoController::class, 'incio']);
  * Clientes
  */
 Route::get('/clientes', [PadraoController::class, 'clientes']);
-Route::get('/clientes/cliente_criar',[PadraoController::class, 'createcliente']);
+Route::get('/clientes/cliente_criar',[PadraoController::class, 'createCliente']);
+Route::get('/clientes/cliente_editar/{id}',[PadraoController::class, 'editCliente']);
+Route::get('/clientes/{id}', [PadraoController::class, 'destroyCliente']);
+Route::post('/clientes/nova',[PadraoController::class, 'storeCliente']);
+Route::put('/clientes/cliente_editar',[PadraoController::class, 'updateCliente']);
 /**
  * Fornecedores
  */
 Route::get('/fornecedores', [PadraoController::class, 'fornecedores']);
+Route::get('/fornecedores/fornecedor_criar',[PadraoController::class, 'createFornecedor']);
+Route::get('/fornecedores/fornecedor_editar/{id}',[PadraoController::class, 'editFornecedor']);
+Route::get('/fornecedores/{id}', [PadraoController::class, 'destroyFornecedor']);
+Route::post('/fornecedores/nova',[PadraoController::class, 'storeFornecedor']);
+Route::put('/fornecedores/fornecedor_editar',[PadraoController::class, 'updateFornecedor']);
 /**
  * Mercadorias
  */
 Route::get('/mercadorias', [PadraoController::class, 'mercadorias']);
-Route::get('/mercadorias/mercadoria_editar/{id}',[PadraoController::class, 'editMercadoria']);
 Route::get('/mercadorias/mercadoria_criar',[PadraoController::class, 'createMercadoria']);
+Route::get('/mercadorias/mercadoria_editar/{id}',[PadraoController::class, 'editMercadoria']);
+Route::get('/mercadorias/{id}', [PadraoController::class, 'destroyMercadoria']);
 Route::post('/mercadorias/nova',[PadraoController::class, 'storeMercadoria']);
 Route::put('/mercadorias/mercadoria_editar',[PadraoController::class, 'updateMercadoria']);
-Route::get('/mercadorias/{id}', [PadraoController::class, 'destroyMercadoria']);
 /**
  * Usuarios
  */
 Route::get('/usuarios', [PadraoController::class, 'usuarios']);
+Route::get('/usuarios/usuario_criar',[PadraoController::class, 'createUsuario']);
+Route::get('/usuarios/usuario_editar/{id}',[PadraoController::class, 'editUsuario']);
+Route::get('/usuarios/{id}', [PadraoController::class, 'destroyUsuario']);
+Route::post('/usuarios/nova',[PadraoController::class, 'storeUsuario']);
+Route::put('/usuarios/usuario_editar',[PadraoController::class, 'updateUsuario']);
 /**
  * Vendas
  */

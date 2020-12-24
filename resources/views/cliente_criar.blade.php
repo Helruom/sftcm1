@@ -3,7 +3,7 @@
     <div class="col-9 m-auto">
         <h1 class="text-center ">Cadastro de Clientes</h1>
         <div class="col-9 m-auto">
-            <form name="formCadastrarCliente" id="formCadastrarCliente" method="post" action="{{url('/Clientes/nova')}}">
+            <form name="formCadastrarCliente" id="formCadastrarCliente" method="post" action="{{url('/clientes/nova')}}">
                 @csrf
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
