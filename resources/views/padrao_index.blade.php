@@ -16,6 +16,7 @@
         <div class="col"><a href="/usuarios">Usuarios</a></div>
       </div>
     @yield('corpo_pagina')
+    @yield('sub_corpo_pagina')
 </body>
 <footer>
     @yield('rodape_pagina')

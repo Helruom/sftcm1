@@ -21,6 +21,7 @@ class CreateModelvendasTable extends Migration
             $table->unsignedBigInteger('id_cliente');
             $table->foreign('id_cliente')->references('id')->on('Clientes')->onupdate('cascade');
             $table->double('valor_venda');
+            $table->string('observacao');
             $table->timestamps();
         });
     }
