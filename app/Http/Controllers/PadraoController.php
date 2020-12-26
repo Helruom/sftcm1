@@ -283,8 +283,9 @@ class PadraoController extends Controller
     {
         $cliente=$this->Cliente->all();
         $usuario=$this->Usuario->all();
-        $mercadoria=$this->Mercadoria->all();   
-        return view('venda_criar',compact('cliente','usuario'));
+        $mercadoria=$this->Mercadoria->all(); 
+        $vMercadorias=$this->Venda_mercadorias->all();  
+        return view('venda_criar',compact('cliente','usuario','mercadoria','vMercadorias'));
     }
     /**
      * Demais funções

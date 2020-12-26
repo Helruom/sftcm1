@@ -39,7 +39,6 @@
               <tr>
             </tbody>
           </table>
- 
     </div>
 @endsection
 @section('rodape_pagina')
