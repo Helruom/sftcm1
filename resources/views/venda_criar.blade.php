@@ -39,15 +39,15 @@
                 </div>
                 <!-- Salvar o cabeçalho da venda e ficar na mesma pagina-->
                 <input class="btn btn-outline-dark mt-2" type="submit" value="Salvar">
-                <a href="/Vendas"><button type="button" class="btn btn-outline-dark mt-2">Voltar</button></a>
+                <a href="/vendas"><button type="button" class="btn btn-outline-dark mt-2">Voltar</button></a>
             </form>
         </div>
     </div>
 @endsection
 @section('sub_corpo_pagina')
     <form action="">
-      <div class="form-group row col-auto m-auto">
-        <div class="col-auto m-auto">
+      <div class="form-group row col-9 m-auto">
+        <div class="col-9 m-auto">
           <h3 class="text-center">Mercadorias</h3>
           <!--Adicionar mercadorias a venda e ficar na mesma pagina e atualizar a exibição da tabela de mercadorias -->
 
@@ -67,20 +67,22 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">                    
-                  <select class="form-control" name="id_mercadoria" id="id_mercadoria">
-                    @foreach ($vMercadorias as $vMercadorias)
-                        <option value="{{$vMercadorias->id}}">{{$vMercadorias->Nome}}</option>
-                    @endforeach
-                  </select>
-              </th>
+                @foreach ($vMercadorias as $vmercadorias)
+                    @php
+                      $merc=$vmercadorias->find($vmercadorias->id_mercadoria)->relationMercadoria;
+                    @endphp
+                    <th>{{$vmercadorias->id_mercadoria}}</th>
+                    <td>{{$mercadorias->preco}}</td>
+                    <td>{{$mercadorias->quantidade}}</td>
+                    <td>{{$mercadorias->total_mercadoria}}</td>
+                    <a href="{{url("/vmercadorias/$vmercadorias->id")}}" clas="jsDelete"><button type="button" class="btn btn-outline-dark">Remover</button></a>
+                @endforeach
               </tr>
             </tbody>
           </table>
         </div>
       </div> 
     </form>
-
     <div class="col-1 m-auto">
       {{$vMercadorias->links()}}
     </div>

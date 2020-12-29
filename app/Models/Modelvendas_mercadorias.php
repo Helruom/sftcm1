@@ -13,4 +13,8 @@ class Modelvendas_mercadorias extends Model
     {
         return $this->hasMany('App\Models\Modelvendas','id','id_venda');
     }
+    public function relationMercadorias()
+    {
+        return $this->hasMany('App\Models\ModelMercadorias','id','id_mercadoria');
+    }
 }
