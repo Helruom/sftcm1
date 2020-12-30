@@ -65,5 +65,5 @@ Route::get('/vendas', [PadraoController::class, 'vendas']);
 Route::get('/vendas/venda_criar',[PadraoController::class, 'createVenda']);
 Route::get('/vendas/venda_editar/{id}',[PadraoController::class, 'editVenda']);
 Route::get('/vendas/{id}', [PadraoController::class, 'destroyVenda']);
-Route::post('/vendas/nova',[PadraoController::class, 'storeVenda']);
+Route::post('//vendas/nova',[PadraoController::class, 'storeVenda']);
 Route::put('/vendas/venda_editar',[PadraoController::class, 'updateVenda']);

@@ -283,9 +283,26 @@ class PadraoController extends Controller
     {
         $cliente=$this->Cliente->all();
         $usuario=$this->Usuario->all();
+        return view('venda_criar',compact('cliente','usuario'));
+    }
+    public function storeVenda(Request $request)
+    {
+        $this->Venda->create([
+            'data_venda'=>$request->dataVenda,
+            'id_usuario'=>$request->id_usuario,
+            'id_cliente'=>$request->id_cliente,
+            'observacao'=>$request->observacao,
+        ]);
+        return redirect('venda_editar');
+
+    }
+    public function editVenda($id){
+        $venda=$this->Venda->find($id);
+        $cliente=$this->Cliente->all();
+        $usuario=$this->Usuario->all();
         $mercadoria=$this->Mercadoria->all(); 
-        $vMercadorias=$this->Venda_mercadorias->paginate(10);  
-        return view('venda_criar',compact('cliente','usuario','mercadoria','vMercadorias'));
+        $vMercadorias=$this->Venda_mercadorias->paginate(10);
+        return view('venda_editar',compact('usuario','cliente','mercadoria','vMercadorias','venda'));
     }
     /**
      * funções do sub da venda
